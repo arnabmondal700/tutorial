@@ -1,0 +1,16 @@
+<div class="d-flex flex-column pt-3">
+    <div *ngFor="let item of subjectCousces.courseMaterial">
+        <p *ngIf="item.type == 'Heading'" class="text-size-2rem font-weight-700">{{item.content}}</p>
+        <p *ngIf="item.type == 'Content'">{{item.content}}</p>
+        <textarea cols={{item.width}} class="code" rows={{calculateRow(item.content)}} *ngIf="item.type == 'Code'" [(ngModel)]="item.content" disabled></textarea>
+        <!-- <span *ngIf="item.type == 'ContentDetails'" 
+        [ngClass]="{'text-success': item.class == 'green',
+        'text-danger': item.class == 'green'}"
+        >{{item.content}}</span> -->
+        <div *ngIf="item.type == 'ContentDetails'" class="d-flex">
+            <span *ngFor="let item of item.content">
+               <span> {{item.detail}} </span>
+            </span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 d-flex flex-column my-2">
+            <div class="text-size-2rem font-weight-700 text-grey custom-style">{{pageLabels.heading}}</div>
+            <div class="text-size-2rem font-weight-700 text-pesta">{{pageLabels.subHeading}}</div>
+            <div *ngFor="let item of pageLabels.contents">{{item.text}}</div>
+        </div>
+        <div class="col-12 d-flex justify-content-around flex-wrap">
+            <div class="px-2" *ngFor="let item of pageLabels.subjects" style="width:250px">
+                <div class="d-flex flex-column justify-content-center py-5 cursor-pointer border rounded shadow " (click)="navigatetoCourseList(item?.label)">
+                    <span class="subject mx-auto text-size-2rem">{{item?.label}}</span>
+                    <span class="details mx-auto text-size-1rem">{{item?.description}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

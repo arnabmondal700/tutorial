@@ -1,0 +1,10 @@
+<div class="container-fluid" *ngIf="courcesList.length>0">
+    <div class="row flex-column">
+        <span class="text-grey text-size-2rem font-weight-700 py-3 text-center">{{courcesList[0].label}}</span>
+        <div class="col-12 d-flex flex-column px-2 py-4 my-1 border rounded shadow-sm"
+            *ngFor="let item of courseListView" (click)="navigateToCourseMaterial(item)">
+            <span>{{item.heading}}</span>
+            <span>{{item.shortDetails}}</span>
+        </div>
+    </div>
+</div>
